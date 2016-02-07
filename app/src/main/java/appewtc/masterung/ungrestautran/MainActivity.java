@@ -1,9 +1,9 @@
 package appewtc.masterung.ungrestautran;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 
 import org.apache.http.HttpEntity;
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 StringBuilder objStringBuilder = new StringBuilder();
                 String strLine = null;
 
-                while ((strLine = objBufferedReader.readLine()) != null ) {
+                while ((strLine = objBufferedReader.readLine()) != null) {
                     objStringBuilder.append(strLine);
                 }   // while
 
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
             try {
 
                 JSONArray objJsonArray = new JSONArray(strJSON);
-                for (int i=0;i<objJsonArray.length();i++) {
+                for (int i = 0; i < objJsonArray.length(); i++) {
 
                     JSONObject jsonObject = objJsonArray.getJSONObject(i);
 
@@ -145,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-
             intTable += 1;
         }   // while
     }   // synJSONtoSQLite
@@ -161,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void testAddValue() {
 
-        for (int i=0;i<=1;i++) {
+        for (int i = 0; i <= 1; i++) {
             objMyManage.addNewValue(i, "test1", "test2", "test3");
         }   //for
 
