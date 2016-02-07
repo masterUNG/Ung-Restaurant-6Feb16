@@ -1,5 +1,6 @@
 package appewtc.masterung.ungrestautran;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -84,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
 
             if (passwordString.equals(resultStrings[2])) {
                 //Intent To Service
+                Intent objIntent = new Intent(MainActivity.this, ServiceActivity.class);
+                objIntent.putExtra("Name", resultStrings[3]);
+                startActivity(objIntent);
+                finish();
+
             } else {
                 Toast.makeText(MainActivity.this,
                         "Password ผิิด",
